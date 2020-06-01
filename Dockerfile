@@ -9,5 +9,7 @@ RUN curl https://gist.githubusercontent.com/Bartixxx32/760a68120013b172070ef6d6f
 
 FROM scratch
 COPY --from=0 focal .
+RUN apt update
+RUN apt upgrade -y
 
 entrypoint ["/bin/bash"]
